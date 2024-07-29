@@ -345,10 +345,6 @@ services:
         condition: service_started
       loadgenerator:
         condition: service_started
-      jaeger:
-        condition: service_started
-      grafana:
-        condition: service_started
 
   # Imageprovider
   imageprovider:
@@ -702,8 +698,6 @@ services:
     ports:
       - "${OTEL_COLLECTOR_PORT_GRPC}"
       - "${OTEL_COLLECTOR_PORT_HTTP}"
-    depends_on:
-      - jaeger
     logging: *logging
     environment:
       - ENVOY_PORT
@@ -711,6 +705,8 @@ services:
       - OTEL_COLLECTOR_HOST
       - OTEL_COLLECTOR_PORT_GRPC
       - OTEL_COLLECTOR_PORT_HTTP
+      - DT_ENDPOINT_UC15
+      - DT_API_TOKEN_UC15
 
   # Prometheus
   prometheus:
