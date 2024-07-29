@@ -3,8 +3,7 @@
     "forwardPorts": [5000],
     "portsAttributes": {
         "5000": {
-            "label": "Ansible Endpoint",
-            "onAutoForward": "ignore"
+            "label": "Ansible Endpoint"
         }
     },
     "hostRequirements": {
