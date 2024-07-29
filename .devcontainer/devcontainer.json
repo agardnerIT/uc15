@@ -1,0 +1,14 @@
+{
+    "name": "basic devcontainer",
+    "forwardPorts": [5000],
+    "portsAttributes": {
+        "5000": {
+            "label": "Ansible Endpoint",
+            "onAutoForward": "ignore"
+        }
+    },
+    "hostRequirements": {
+        "cpus": 2
+    },
+    "postCreateCommand": ".devcontainer/post-create.sh"
+}

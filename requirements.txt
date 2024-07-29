@@ -1,0 +1,4 @@
+ansible
+ansible-rulebook
+ansible-runner
+psycopg

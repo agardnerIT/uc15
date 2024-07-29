@@ -1,0 +1,9 @@
+apt update
+apt install -y openjdk-21-jdk
+
+pip install -r requirements.txt
+ansible-galaxy collection install ansible.eda
+ansible-rulebook --rulebook webhook-example.yml -i inventory.yml --verbose
+
+curl -X GET http://localhost:5000 -d '{"message": "Ansible is good"}' # Will do nothing
+curl -X GET http://localhost:5000 -d '{"message": "Ansible is super cool"}' # Will trigger the rule definition in webhook-example.yml
